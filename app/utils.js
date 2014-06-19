@@ -25,6 +25,13 @@ function getWoeid (location) {
   });
 }
 
+function urlWoeid (location) {
+  return ('http://query.yahooapis.com'+
+  '/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text%3D%22'+
+  encodeURIComponent(location)+
+  '%22%20and%20gflags%3D%22R%22&format=json&diagnostics=true&callback=');
+}
+
 function parseWoeid(data) {
   var results;
     var count = data.query.count;
@@ -47,13 +54,6 @@ function getWeather(woeid) {
   }).error( function(error) {
     console.log("Error getting weather data: " + error);
   });
-}
-
-function urlWoeid (location) {
-  return ('http://query.yahooapis.com'+
-  '/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text%3D%22'+
-  encodeURIComponent(location)+
-  '%22%20and%20gflags%3D%22R%22&format=json&diagnostics=true&callback=');
 }
 
 function urlWeather (woeid) {

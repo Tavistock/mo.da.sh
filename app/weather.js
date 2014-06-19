@@ -7,17 +7,23 @@ App.Weather = React.createClass({
     // make url using state: unit, woeid, urlMaker
   getInitialState: function() {
     return {
-      woeid: this.props.location.woeid,
-      city: this.props.location.city,
+      woeid: "",
+      city: "",
       data: {
         code: 25,
         temp: '...'
       },
-      unit: "f"
+      unit: "f",
+      editing: false
     };
   },
   componentWillMount: function() {
-    this.loadWeatherFromServer();
+    getCoords
+    .then(getWoeid)
+    .then(function(value) {
+      this.setState(parseWoeid(value));
+      this.loadWeatherFromServer();
+    }.bind(this));
     setInterval(this.loadWeatherFromServer, this.props.pollInterval);
   },
   loadWeatherFromServer: function() {
@@ -29,12 +35,11 @@ App.Weather = React.createClass({
         this.setState({data: newData});
       }.bind(this),
       error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
+        console.error(xhr, status, err.toString());
       }.bind(this)
     });
   },
   loadWoeidFromServer: function() {
-    console.log(urlWoeid(this.state.location));
     $.ajax({
       url: urlWoeid(this.state.location),
       dataType: 'json',
@@ -43,21 +48,22 @@ App.Weather = React.createClass({
         this.setState({data: newData});
       }.bind(this),
       error: function(xhr, status, err) {
-        console.error(url, status, err.toString());
+        console.error(xhr, status, err.toString());
       }.bind(this)
     });
   },
   render: function() {
-    var cx = React.addons.classSet;
     temp = this.state.data.temp + "°";
     code = "wi " + this.mapWeather[this.state.data.code];
     return(
       /* jshint ignore:start */
-      <div className="weather">
+      <div className={"weather"}>
         <div>
-          <i className={code}></i>{temp}
+          <i className={code}></i>{" " + temp}
         </div>
-        <span>{this.state.city}</span>
+        <label>
+          {this.state.city.toUpperCase()}
+        </label>  
       </div>
       /* jshint ignore:end */
     );
