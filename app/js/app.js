@@ -75,7 +75,8 @@ function loadWeather(location, woeid) {
 }
 
 function getOrRandomUrl() {
-  if (moment(localStorage.lastChanged).add("day", 1) > moment()) {
+  if ((moment(localStorage.lastChanged).add("day", 1) > moment()) &&
+    localStorage.picUrl) {
     return localStorage.picUrl;
   } else {
     localStorage.lastChanged = moment();

@@ -13,11 +13,10 @@ function dumpBookmarks() {
     .then(function() {
       var open = 'glyphicon-folder-close';
       var close = 'glyphicon-folder-open';
-      $(".bookmarks ul > li:nth-child(1)")
-      .prepend("<span class='glyphicon folder-icon " + open + "'></span>");
-      $(".folder-icon").closest("ul").eq(0).find("ul li, li").slice(1).hide();
+      $(".bookmarks li.folder")
+      .prepend("<span class='glyphicon folder-icon " + close + "'></span>");
       $('.folder-icon').on('click',function(){
-         var parentList = $(this).closest("ul").eq(0);
+         var parentList = $(this).closest("li").eq(0);
         if( $(this).hasClass(open) ){
           $(this).removeClass(open);
           $(this).addClass(close);
@@ -25,7 +24,7 @@ function dumpBookmarks() {
           $(this).removeClass(close);
           $(this).addClass(open);
         }
-        parentList.children("ul").children("li:nth-child(1)")
+        parentList.children("ul")
         .slideToggle("fast"); // toggle folders
 
         parentList.children("li").slice(1)
@@ -42,9 +41,10 @@ var makeFolder = function(folder) {
     var title = $("<li>");
 
     title.text(folder.title);
+    title.attr("class","folder");
     ulist.attr("class","folder folder"+folder.id);
-    ulist.append(title);
-    selector.append(ulist);
+    title.append(ulist);
+    selector.append(title);
   }
 };
 
@@ -56,7 +56,7 @@ var makeBookmark = function(bookmark) {
   anchor.text(bookmark.title);
   anchor.attr("href", bookmark.url);
   list.append(anchor);
-  $book.find(selector).append(list);
+  $book.find(selector).first("ul").append(list);
 };
 
 function nodeHandler (obj, acc) {
