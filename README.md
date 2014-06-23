@@ -1,11 +1,18 @@
 modash
 ======
-minimalistic google chrome extension.
-light on features and calories
+"light on features and on calories"
+
+minimalistic google chrome extension:
 * bookmarks
 * time
 * weather
 * daily background change ([unsplash](http://unsplash.com))
+
+installation
+------------
+1. download
+2. enable developer mode
+3. load it as an unpacked extension
 
 screenshots
 -----------
