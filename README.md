@@ -1,7 +1,7 @@
 modash
 ======
+![](https://raw.githubusercontent.com/Tavistock/mo.da.sh/promises/screenshot1.png)
 "light on features and on calories"
-
 minimalistic google chrome extension:
 * bookmarks
 * time
@@ -16,5 +16,4 @@ installation
 
 screenshots
 -----------
-![](https://raw.githubusercontent.com/Tavistock/mo.da.sh/promises/screenshot1.png)
 ![](https://raw.githubusercontent.com/Tavistock/mo.da.sh/promises/screenshot2.png)
