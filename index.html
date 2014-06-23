@@ -1,56 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
 
-    <!-- Bootstrap -->
-    <link href="lib/css/bootstrap.css" rel="stylesheet">
-    <link href="lib/css/weather-icons.css" rel="stylesheet">
-    <link href="app/style.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="lib/css/bootstrap.css" rel="stylesheet">
+  <link href="app/css/style.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
 
 
-  <body>
+<body>
   <div>
 
   <div class="bg">
-    <img src="/background/33.jpg">
   </div>
 
-    <div class="b-side">
-        <div class="bookmarks"></div>
-    </div>
-
-    <div class="b-side-opener">
-      <a href="#"><span class="glyphicon glyphicon-align-justify"></span></a>
-    </div><!-- b-side -->
-
-    <div class="main">
-      <div class="center">
-        <div class="clock"></div>
-        <div class="weather"></div>
-      </div> <!-- center -->
-    </div>
+  <div class="aside">
+      <div class="bookmarks"></div>
   </div>
 
-    <script type="text/javascript" src="lib/js/jquery.js"></script>
-    <script src="lib/js/bootstrap.js"></script>
-    <script type="text/javascript" src="lib/js/underscore.js"></script>
-    <script type="text/javascript" src="lib/js/moment.min.js"></script>
-    <script type="text/javascript" src="lib/js/jquery.simpleWeather.js"></script>
+  <div class="aside-opener">
+    <a href="#"><span class="glyphicon glyphicon-align-justify"></span></a>
+  </div><!-- aside -->
 
-    <script type="text/javascript" src="app/utils.js"></script>
-    <script type="text/javascript" src="app/app.js"></script>
+  <div class="main">
+    <div class="center">
+      <div class="clock"></div>
+      <div class="weather"></div>
+    </div> <!-- center -->
+  </div>
+  </div>
 
-  </body>
+  <script src="lib/js/jquery.js"></script>
+  <script src="lib/js/bootstrap.js"></script>
+  <script src="lib/js/lodash.js"></script>
+  <script src="lib/js/moment.min.js"></script>
+  <script src="lib/js/jquery.simpleWeather.js"></script>
+
+  <script src="urls.js"></script>
+  <script src="app/js/bookmark.js"></script>
+  <script src="app/js/app.js"></script>
+
+</body>
 </html>

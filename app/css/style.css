@@ -8,6 +8,10 @@
  * Main content
  */
 
+body {
+  background-color: #0A0A0A;
+}
+
 .main {
   opacity: 0.9;
   font-family: "Marvel", sans-serif;
@@ -25,23 +29,19 @@
   -webkit-transform: translate(-50%);
 }
 
-ul {
-  list-style: none;
-}
-
 
 /*
  * b-side
  */
 
-.b-side, .b-side-opener {
+.aside, .aside-opener {
   position: fixed;
   top: 0px;
   transition: all .4s ease 0s;
   z-index: 1000;
 }
 
-.b-side-opener span {
+.aside-opener span {
   top:5px;
   opacity: 0.9;
   color: white;
@@ -49,7 +49,8 @@ ul {
   padding: 15px 15px;
 }
 
-.b-side {
+.aside {
+  overflow-y:auto;
   background-color: white;
   opacity: 0.9;
   width: 30%;
@@ -67,6 +68,7 @@ ul {
   width: 200%; 
   height: 200%;
 }
+
 .bg img {
   position: absolute; 
   top: 0; 
@@ -74,7 +76,7 @@ ul {
   right: 0; 
   bottom: 0; 
   margin: auto; 
-  min-width: 50%;
+  max-width: 50%;
   min-height: 50%;
 }
 
@@ -92,11 +94,18 @@ ul {
   font-size: 24px;
 }
 
-.bookmarks ul {
-  padding-left: 10px;
+.bookmarks ul,.bookmarks li {
+  padding: 0px 10px;
+  list-style: none;
 }
 .bookmarks {
   overflow-x:hidden;
   margin:20px;
   white-space: nowrap;
 }
+.bookmarks ul>li:nth-child(1){
+  padding:0px;
+}
+ .folder-icon{
+  padding-right:6px;
+ }
